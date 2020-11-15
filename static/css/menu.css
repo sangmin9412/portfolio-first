@@ -1,0 +1,243 @@
+/* General styles for all menus */
+.cbp-spmenu {
+	background: #47a3da;
+	position: fixed;
+}
+
+.cbp-spmenu h3 {
+	color: #afdefa;
+	font-size: 1.9em;
+	padding: 20px;
+	margin: 0;
+	font-weight: 300;
+	background: #0d77b6;
+}
+
+.cbp-spmenu a {
+	display: block;
+	color: #fff;
+	font-size: 1.1em;
+	font-weight: 300;
+}
+
+.cbp-spmenu a:hover {
+	background: #258ecd;
+}
+
+.cbp-spmenu a:active {
+	background: #afdefa;
+	color: #47a3da;
+}
+
+/* Orientation-dependent styles for the content of the menu */
+
+.cbp-spmenu-vertical {
+	width: 240px;
+	height: 100%;
+	top: 0;
+	z-index: 1000;
+}
+
+
+/* 
+.cbp-spmenu-vertical a {
+	border-bottom: 1px solid #258ecd;
+	padding: 1em;
+} 
+*/
+
+
+.cbp-spmenu-horizontal {
+	width: 100%;
+	height: 150px;
+	left: 0;
+	z-index: 1000;
+	overflow: hidden;
+}
+
+.cbp-spmenu-horizontal h3 {
+	height: 100%;
+	width: 20%;
+	float: left;
+}
+
+.cbp-spmenu-horizontal a {
+	float: left;
+	width: 20%;
+	padding: 0.8em;
+	border-left: 1px solid #258ecd;
+}
+
+/* Vertical menu that slides from the left or right */
+
+.cbp-spmenu-left {
+	left: -240px;
+}
+
+.cbp-spmenu-right {
+	right: -240px;
+}
+
+.cbp-spmenu-left.cbp-spmenu-open {
+	left: 0px;
+}
+
+.cbp-spmenu-right.cbp-spmenu-open {
+	right: 0px;
+}
+
+/* Horizontal menu that slides from the top or bottom */
+
+.cbp-spmenu-top {
+	top: -150px;
+}
+
+.cbp-spmenu-bottom {
+	bottom: -150px;
+}
+
+.cbp-spmenu-top.cbp-spmenu-open {
+	top: 0px;
+}
+
+.cbp-spmenu-bottom.cbp-spmenu-open {
+	bottom: 0px;
+}
+
+/* Push classes applied to the body */
+
+.cbp-spmenu-push {
+	overflow-x: hidden;
+	position: relative;
+	left: 0;
+}
+
+.cbp-spmenu-push-toright {
+	left: 240px;
+}
+
+.cbp-spmenu-push-toleft {
+	left: -240px;
+}
+
+/* Transitions */
+
+.cbp-spmenu,
+.cbp-spmenu-push {
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+/* menu Button */
+.lines,
+.lines:before,
+.lines:after {
+  display: inline-block;
+  width: 22px;
+  height: 3px;
+  /* -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box; */
+  background: #fff;
+}
+.lines {
+  position: relative;
+  top: -2px;
+}
+.lines:before,
+.lines:after {
+  position: absolute;
+  left: 0;
+  content: '';
+  -webkit-transform-origin: 10px center;
+  transform-origin: 10px center;
+}
+.lines:before {
+  top: 7px;
+}
+.lines:after {
+  top: -7px;
+}
+.link-menu.active .lines:before,
+.link-menu.active .lines:after {
+  -webkit-transition: top 0.3s ease-in-out, -webkit-transform 0.3s 0.5s ease-in-out;
+  -moz-transition: top 0.3s ease-in-out, -moz-transform 0.3s 0.5s ease-in-out;
+  -o-transition: top 0.3s ease-in-out, -o-transform 0.3s 0.5s ease-in-out;
+  transition: top 0.3s ease-in-out,-webkit-transform 0.3s 0.5s ease-in-out,-moz-transform 0.3s 0.5s ease-in-out,-o-transform 0.3s 0.5s ease-in-out,transform 0.3s 0.5s ease-in-out;
+  top: 0;
+  width: 22px;
+}
+.link-menu .lines:before,
+.link-menu .lines:after {
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  -webkit-transition: top 0.3s 0.6s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  -moz-transition: top 0.3s 0.6s ease-in-out, -moz-transform 0.3s ease-in-out;
+  -o-transition: top 0.3s 0.6s ease-in-out, -o-transform 0.3s ease-in-out;
+  transition: top 0.3s 0.6s ease-in-out,-webkit-transform 0.3s ease-in-out,-moz-transform 0.3s ease-in-out,-o-transform 0.3s ease-in-out,transform 0.3s ease-in-out;
+}
+.link-menu.active .lines,
+.link-menu.closing .lines {
+  transition: background 0.3s 0s ease-in-out;
+  background: transparent !important;
+}
+.link-menu.active .lines:before {
+  -webkit-transform: rotate3d(0, 0, 1, 45deg);
+  -moz-transform: rotate3d(0, 0, 1, 45deg);
+  -o-transform: rotate3d(0, 0, 1, 45deg);
+  -ms-transform: rotate3d(0, 0, 1, 45deg);
+  transform: rotate3d(0, 0, 1, 45deg);
+}
+.link-menu.active .lines:after {
+  -webkit-transform: rotate3d(0, 0, 1, -45deg);
+  -moz-transform: rotate3d(0, 0, 1, -45deg);
+  -o-transform: rotate3d(0, 0, 1, -45deg);
+  -ms-transform: rotate3d(0, 0, 1, -45deg);
+  transform: rotate3d(0, 0, 1, -45deg);
+}
+
+/* Example media queries */
+
+@media screen and (max-width: 55.1875em){
+
+	.cbp-spmenu-horizontal {
+		font-size: 75%;
+		height: 110px;
+	}
+
+	.cbp-spmenu-top {
+		top: -110px;
+	}
+
+	.cbp-spmenu-bottom {
+		bottom: -110px;
+	}
+
+}
+
+@media screen and (max-height: 26.375em){
+
+	.cbp-spmenu-vertical {
+		font-size: 90%;
+		width: 190px;
+	}
+
+	.cbp-spmenu-left,
+	.cbp-spmenu-push-toleft {
+		left: -190px;
+	}
+
+	.cbp-spmenu-right {
+		right: -190px;
+	}
+
+	.cbp-spmenu-push-toright {
+		left: 190px;
+	}
+
+}
+
